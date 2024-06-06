@@ -1,0 +1,92 @@
+.card {
+  margin: 25px;
+  width: 400px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 10px;
+  background-color: aliceblue;
+  transition: 0.3s ease;
+}
+
+p {
+  all: unset;
+}
+
+.title {
+  text-align: center;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.company-name {
+  font-weight: 700;
+}
+
+.company-bs {
+  text-transform: capitalize;
+}
+
+.work {
+  margin-left: 27px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5px;
+}
+
+.btn {
+  all: unset;
+  padding: 4px;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 55px;
+  transition: 0.3s ease;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.btn-edit {
+  border: 2px solid rgb(21, 146, 255);
+  color: rgb(21, 146, 255);
+}
+
+.btn-icon {
+  align-self: center;
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+.btn-delete {
+  border: 2px solid red;
+  color: red;
+}
+
+.btn-delete:hover {
+  background-color: red;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: rgb(21, 146, 255);
+  color: white;
+}
+
+.card:hover {
+  /* border: 1px solid black; */
+  transform: scale(1.05);
+}

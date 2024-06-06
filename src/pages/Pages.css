@@ -1,0 +1,102 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.toggle-view-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 175px;
+  margin: 25px;
+  cursor: pointer;
+  gap: 5px;
+  background-color: aliceblue;
+  border-radius: 5px;
+}
+
+.toggle-view-container > h3 {
+  color: #fff;
+  text-align: center;
+}
+
+.toggle-btn {
+  all: unset;
+  font-size: 20px;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+
+.form-icon {
+  font-size: 28px;
+  color: #000000;
+}
+
+.detail {
+  margin-left: 42px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.form-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+  gap: 15px;
+  width: 500px;
+  border-radius: 15px;
+  border: 1px solid black;
+  padding: 15px;
+  background-color: #fff;
+}
+
+.input {
+  all: unset;
+  width: 350px;
+  border: 2px solid black;
+  padding-left: 10px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 10px;
+  color: #000;
+}
+
+.submit-btn {
+  all: unset;
+  padding: 4px;
+  cursor: pointer;
+  font-size: 17px;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid black;
+  transition: 0.3s ease;
+  width: 85px;
+}
+
+.submit-btn:hover {
+  background-color: black;
+  color: white;
+}
