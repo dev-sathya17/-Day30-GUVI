@@ -1,5 +1,7 @@
+// Importing custom CSS
 import "./Card.css";
-// import "../../pages/Pages.css";
+
+// Importing required icons
 import { FaUser } from "react-icons/fa";
 import { IoIosMail } from "react-icons/io";
 import { MdCall } from "react-icons/md";
@@ -8,6 +10,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
+// Card component to render all the user data into cards
 const Card = ({ user, handleUpdate, handleDelete }) => {
   return (
     <div className="card">

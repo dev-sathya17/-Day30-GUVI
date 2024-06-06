@@ -1,7 +1,15 @@
+// importing axios: used for making API calls to a server.
 import axios from "axios";
+
+// Importing required hooks.
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+
+// Importing required components and CSS.
 import Card from "../components/card/Card";
+import "./Pages.css";
+
+// Importing required icons.
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
@@ -9,16 +17,21 @@ import { IoIosMail } from "react-icons/io";
 import { MdCall } from "react-icons/md";
 import { MdWork } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
-import "./Pages.css";
 
+// Declaring Base URL as a constant for reusability
 const API_URL = "https://jsonplaceholder.typicode.com/users";
+
+// A base loader function, which is used to fetch data on page load.
 export const loader = async () => {
   const response = await axios.get(API_URL);
   return { users: response.data };
 };
 
 const Home = () => {
+  // Retrieve users from the loader.
   const { users: initialData } = useLoaderData();
+
+  // Declaring required state variables
   const [users, setUsers] = useState(initialData);
   const [toggleView, setToggleView] = useState(false);
   const [isUpdate, setIsUpdate] = useState(false);
@@ -41,8 +54,12 @@ const Home = () => {
     },
   });
 
+  // Handler function to trigger on form submission.
   const handleSubmit = async (e) => {
+    // To prevent page from reloading
     e.preventDefault();
+
+    // Business logic for updation and addition of users.
     try {
       let response;
       let newUser;
@@ -58,10 +75,8 @@ const Home = () => {
       } else {
         let id = users.length + 1;
         newUser = { ...user, id: id };
-        console.log(newUser);
         response = await axios.post(API_URL, newUser);
         if (response.status === 201) {
-          console.log("here");
           setUsers([...users, newUser]);
         }
       }
@@ -91,21 +106,25 @@ const Home = () => {
     }
   };
 
+  // Handler function to trigger for updating a user data.
   const handleUpdate = (user) => {
     setUser(user);
     setIsUpdate(true);
     setToggleView(true);
   };
 
+  // Handler function to trigger for deleting a user data.
   const handleDelete = (id) => {
     const usersData = users.filter((user) => user.id !== id);
     setUsers(usersData);
   };
 
+  // Handler function for toggling the form view.
   const handleToggle = () => setToggleView(!toggleView);
 
   return (
     <>
+      {/* Toggle Button to make the UI more clean and user-friendly. */}
       <div className="form-container">
         <div className="toggle-view-container">
           <div className="section" onClick={handleToggle}>
@@ -119,6 +138,7 @@ const Home = () => {
             </button>
           </div>
         </div>
+        {/* A form to get the input values for adding a new user */}
         {toggleView && (
           <form className="form">
             <div className="form-contents">
@@ -312,6 +332,7 @@ const Home = () => {
           </form>
         )}
       </div>
+      {/* Generating cards dynamically with user data */}
       <div className="card-container">
         {users.map((user) => (
           <Card
