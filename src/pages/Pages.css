@@ -66,7 +66,8 @@
   align-items: center;
   transition: 0.3s ease;
   gap: 15px;
-  width: 500px;
+  width: 90%;
+  max-width: 500px;
   border-radius: 15px;
   border: 1px solid black;
   padding: 15px;
@@ -75,7 +76,8 @@
 
 .input {
   all: unset;
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   border: 2px solid black;
   padding-left: 10px;
   height: 40px;
@@ -99,4 +101,39 @@
 .submit-btn:hover {
   background-color: black;
   color: white;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .form-contents {
+    width: 70%;
+    padding: 10px;
+  }
+
+  .input {
+    width: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .toggle-view-container > h3 {
+    font-size: 16px;
+  }
+
+  .toggle-btn {
+    font-size: 16px;
+  }
+
+  .form-icon {
+    font-size: 24px;
+  }
+
+  .input {
+    width: 200px;
+  }
+
+  .submit-btn {
+    width: 70px;
+    font-size: 15px;
+  }
 }
